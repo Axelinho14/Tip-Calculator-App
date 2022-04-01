@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+        <link rel="icon" href="image/favicon-32x32.png">
+        <link rel="stylesheet" href="style.css">
+        <title>Frontend Mentor | Tip Calculator</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main class="container">
+            <div id="logo-container">
+                <img id="logo" src="image/logo.svg" alt="logo splitter">
+            </div>
+            <div class="app-container">
+                <p id="error">Can't be zero</p>
+                <form id="Calculator">
+                    <div id="bill-container">
+                        <label id="bill-label" for="bill">Bill</label>
+                        <input type="text" id="bill-input" name="bill" placeholder="0">
+                        <img id="icon-dollar" src="image/icon-dollar.svg" alt="icon dollar">
+                    </div>
+                    <p id="tip-title">Select Tip %</p>
+                    <div id="tip-container">
+                        <input type="radio" class="tip" id="five" name="tip" value="0.05">
+                            <label id="test" for="five">5%</label>
+                        <input type="radio" class="tip" id="ten" name="tip" value="0.10">
+                            <label for="ten">10%</label>
+                        <input type="radio" class="tip" id="fifteen" name="tip" value="0.15">
+                            <label for="fifteen">15%</label>
+                        <input type="radio" class="tip" id="twentyfive" name="tip" value="0.25">
+                            <label for="twentyfive">25%</label>
+                        <input type="radio" class="tip" id="fifty" name="tip" value="0.50">
+                            <label for="fifty">50%</label>
+                        <input type="text" id="custom" name="tip" placeholder="Custom">
+                    </div>
+                    <div id="nop-container">
+                        <label id="number-label" for="number">Number of People</label>
+                        <input type="text" id="number-input" name="number" placeholder="0">
+                        <img id="icon-person" src="image/icon-person.svg" alt="icon person">
+                    </div>
+                </form>
+                <div id="result">
+                    <div id="tip-amount-container">
+                        <p id="tip-amount-text">Tip Amount<br><span>/ person</span></p>
+                        <p id="tip-amount-result">$0.00</p>
+                    </div>
+                    <div id="total-container">
+                        <p id="total-text">Total<br><span>/ person</span></p>
+                        <p id="total-result">$0.00</p>
+                    </div>
+                    <form id="form-result">
+                        <input type="submit" name="reset" id="reset" value="RESET">
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,388 @@
+:root{
+    --Strong-cyan: hsl(172, 67%, 45%);
+
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(202, 50%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    margin: 0cm;
+    padding: 0cm;
+    font-family: "space mono";
+}
+body{
+    background-color: var(--Light-grayish-cyan);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+#logo-container{
+    text-align: center;
+    margin-top: 4cm;
+}
+.app-container{
+    background-color: var(--White);
+    width: 24cm;
+    height: 12.5cm;
+    border-radius: 0.5cm;
+    margin-top: 2cm;
+    box-shadow: hsl(187, 38%, 77%) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+#error{
+    display: none;
+    position: absolute;
+    top: 9.2cm;
+    left: 8cm;
+    color: hsl(11, 50%, 60%);
+}
+#bill-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8cm;
+    margin-left: 1cm;
+    position: relative;
+}
+#bill-label{
+    font-size: 0.4cm;
+    color: var(--Dark-grayish-cyan);
+}
+#bill-input{
+    background-color: var(--Very-light-grayish-cyan);
+    border-style: none;
+    width: 10cm;
+    height: 1cm;
+    border-radius: 0.1cm;  
+    margin-top: 0.15cm;
+    transition: 0.1s;
+    text-align: end;
+    font-size: 0.6cm;
+    padding-right: 0.4cm;
+    color:var(--Very-dark-cyan);
+}
+#bill-input::placeholder{
+    display: flex;
+    text-align: end;
+    margin-right: 0.1cm;
+    color: var(--Grayish-cyan);
+    font-size: 0.5cm;
+}
+#bill-input:focus{
+    outline: none;
+    border: 2px solid var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    text-align: end;
+    font-size: 0.6cm
+}
+#icon-dollar{
+    position: absolute;
+    top: 1cm;
+    left: 0.3cm;
+}
+#tip-title{
+    margin-top: 1cm;
+    margin-left: 1cm;
+    color: var(--Dark-grayish-cyan);
+}
+#tip-container{
+    display: grid;
+    grid-template-columns: 3.2cm 3.2cm 3.2cm;
+    grid-row: 1.3cm 1.3cm;
+    gap: 0.4cm;
+    margin-top: 0.5cm;
+    margin-left: 1cm;
+}
+.tip{
+    display: none;
+}
+.tip + label{
+    display: inline-block;
+    width: 3.2cm;
+    height: 1.3cm;
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0.2cm;
+    font-size: 0.7cm;
+    color: var(--White);
+    text-align: center;
+    line-height: 1.3cm;
+    transition: 0.3s;
+}
+.tip:checked + label{
+    background-color:hsl(173, 62%, 76%);
+    color: var(--Very-dark-cyan);
+}
+.tip:hover + label{
+    cursor: pointer;
+}
+#custom{
+    width: 2.8cm;
+    height: 1.2cm;
+    border-radius: 0.2cm;
+    border-style: none;
+    background-color: var(--Very-light-grayish-cyan);
+    font-size: 0.7cm;
+    text-align: end;
+    padding-right: 0.3cm;
+    color:var(--Very-dark-cyan)
+}
+#custom::placeholder{
+    color: var(--Dark-grayish-cyan);
+}
+#custom:focus{
+    outline: none;
+    border: 2px solid var(--Strong-cyan);
+}
+#custom:hover{
+    cursor: pointer;
+}
+#nop-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5cm;
+    margin-left: 1cm;
+    position: relative;
+}
+#number-label{
+    font-size: 0.4cm;
+    color: var(--Dark-grayish-cyan);
+}
+#number-input{
+    background-color: var(--Very-light-grayish-cyan);
+    border-style: none;
+    width: 10cm;
+    height: 1cm;
+    border-radius: 0.1cm;  
+    margin-top: 0.2cm;
+    transition: 0.1s;
+    text-align: end;
+    font-size: 0.6cm;
+    padding-right: 0.4cm;
+    color:var(--Very-dark-cyan);
+}
+#number-input::placeholder{
+    display: flex;
+    text-align: end;
+    margin-right: 0.1cm;
+    color: var(--Grayish-cyan);
+    font-size: 0.5cm;
+}
+#number-input:focus{
+    outline: none;
+    border: 2px solid var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    text-align: end;
+    font-size: 0.6cm
+}
+#icon-person{
+    position: absolute;
+    margin-top: 1.1cm;
+    margin-left: 0.3cm;
+}
+#result{
+    background-color: var(--Very-dark-cyan);
+    height: 11cm;
+    width: 11cm;
+    margin-left: 1cm;
+    margin-top: 0.8cm;
+    border-radius: 0.4cm;
+}
+#tip-amount-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5cm;
+    margin-left: 1cm;
+    justify-content: space-between;
+    width: 9.2cm;
+}
+#tip-amount-text{
+    color: var(--White);
+
+}
+#tip-amount-text span{
+    color:var(--Grayish-cyan);
+    font-size: 0.35cm;
+}
+#tip-amount-result{
+    color: var(--Strong-cyan);
+    font-size: 1.3cm;
+    margin-top: -0.4cm;
+}
+#total-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5cm;
+    margin-left: 1cm;
+    justify-content: space-between;
+    width: 9.2cm;
+}
+#total-text{
+    color: var(--White);
+
+}
+#total-text span{
+    color:var(--Grayish-cyan);
+    font-size: 0.35cm;
+}
+#total-result{
+    color: var(--Strong-cyan);
+    font-size: 1.3cm;
+    margin-top: -0.4cm;
+    margin-left: 3.4cm;
+}
+#form-result{
+    margin-top: 2.8cm;
+    margin-left: 1cm;
+}
+#reset{
+    width: 9cm;
+    height: 1.2cm;
+    border-radius: 0.2cm;
+    border-style: none;
+    background-color: hsl(183, 80%, 24%);
+    color: hsl(184, 96%, 19%);
+    font-size: 0.5cm;
+    text-align: center;
+    transition: 0.2s;
+}
+#reset:hover{
+    background-color: hsl(173, 61%, 77%);
+    color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+@media screen and (max-width: 625px) {
+    #logo-container{
+        margin-top: 1cm;
+    }
+    .app-container{
+        width: 10.5cm;
+        height: 21cm;
+        margin-top: 0.8cm;
+        flex-direction: column;
+        position: relative;
+    }
+    #error{
+        display: none;
+        position: absolute;
+        top: 9.2cm;
+        left: 8cm;
+        color: hsl(11, 50%, 60%);
+    }
+    #bill-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.8cm;
+        margin-left: 0.8cm;
+        position: relative;
+    }
+    #bill-label{
+        font-size: 0.4cm;
+        color: var(--Dark-grayish-cyan);
+    }
+    #bill-input{
+        background-color: var(--Very-light-grayish-cyan);
+        border-style: none;
+        width: 8.5cm;
+        height: 1.2cm;
+        transition: 0.1s;
+    }
+    #icon-dollar{
+        position: absolute;
+        top: 1.1cm;
+    }
+    #tip-title{
+        margin-top: 0.8cm;
+        margin-left: 0.8cm;
+    }
+    #tip-container{
+        display: grid;
+        grid-template-columns: 4.3cm 4.3cm;
+        grid-row: 1.3cm 1.3cm 1.3cm;
+        gap: 0.4cm;
+        margin-top: 0.5cm;
+        margin-left: 0.8cm;
+    }
+    .tip + label{
+        width: 4.3cm;
+        height: 1.3cm;
+        transition: 0.3s;
+    }
+    #custom{
+        width: 3.8cm;
+        height: 1.3cm;
+        border-radius: 0.2cm;
+        padding-right: 0.5cm;
+    }
+    #nop-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1cm;
+        margin-left: 0.8cm;
+        position: relative;
+    }
+    #number-input{
+        border-style: none;
+        width: 8.5cm;
+        height: 1.2cm;
+        transition: 0.1s;
+    }
+    #icon-person{
+        position: absolute;
+        margin-top: 1.1cm;
+        margin-left: 0.3cm;
+    }
+    #result{
+        background-color: var(--Very-dark-cyan);
+        height: 7cm;
+        width: 9.1cm;
+        margin-left: 0.7cm;
+        margin-top: 0.8cm;
+        border-radius: 0.4cm;
+    }
+    #tip-amount-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1cm;
+        margin-left: 0.7cm;
+        justify-content: space-between;
+        width: 8cm;
+    }
+    #tip-amount-result{
+        font-size: 1cm;
+        margin-top: -0.2cm;
+    }
+    #total-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1cm;
+        margin-left: 0.7cm;
+        justify-content: space-between;
+        width: 8cm;
+    }
+    #total-result{
+        color: var(--Strong-cyan);
+        font-size: 1cm;
+        margin-top: -0.2cm;
+        margin-left: 0cm;
+    }
+    #form-result{
+        margin-top: 0.8cm;
+        margin-left: 0cm;
+    }
+    #reset{
+        width: 8.2cm;
+        height: 1.2cm;
+        margin-left: 0.45cm;
+        font-size: 0.5cm;
+        transition: 0.2s;
+    }
+    #reset:hover{
+        background-color: hsl(173, 61%, 77%);
+        color: var(--Very-dark-cyan);
+        cursor: pointer;
+    }
+}
